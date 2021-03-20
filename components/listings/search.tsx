@@ -4,35 +4,36 @@ import { Input, InputGroup, InputLeftElement } from "@chakra-ui/input";
 import { GridItem, SimpleGrid } from "@chakra-ui/layout";
 import React from "react";
 import { FaFilter, FaSearch } from "react-icons/fa";
-import { FiMapPin } from "react-icons/fi";
+import { SiGooglemaps } from "react-icons/si";
 
 const Search = () => {
   return (
-    <SimpleGrid columns={4} mt={4} spacing={2}>
-      <GridItem colSpan={2}>
+    <SimpleGrid columns={24} mt={4} spacing={4}>
+      <GridItem colSpan={12}>
         <InputGroup>
           <InputLeftElement pointerEvents="none" h="full">
             <Icon as={FaSearch} color="blackAlpha.300" />
           </InputLeftElement>
           <Input
             shadow="base"
-            rounded="sm"
+            rounded="md"
             variant="filled"
             placeholder="Search job title or keyword"
-            size="lg"
+            size="md"
             fontSize="xs"
+            focusBorderColor="brand.300"
           />
         </InputGroup>
       </GridItem>
-      <GridItem colSpan={1}>
+      <GridItem colSpan={6}>
         <Button
-          leftIcon={<Icon as={FiMapPin} color="brand.300" />}
+          leftIcon={<Icon as={SiGooglemaps} color="brand.300" />}
           {...butStyles}
         >
           City
         </Button>
       </GridItem>
-      <GridItem colSpan={1}>
+      <GridItem colSpan={6}>
         <Button
           leftIcon={<Icon as={FaFilter} color="brand.300" />}
           {...butStyles}
@@ -47,15 +48,17 @@ const Search = () => {
 export default Search;
 
 const butStyles: ButtonProps = {
-  size: "lg",
+  size: "md",
   w: "full",
   color: "blackAlpha.800",
-  rounded: "sm",
+  bg: "white",
+  rounded: "md",
   shadow: "md",
   borderWidth: "1px",
-  borderColor: "gray.200",
+  borderColor: "blackAlpha.100",
   fontSize: "md",
-  fontWeight: "md",
+  justifyContent: "left",
+  fontWeight: "semibold",
   _focus: { border: "inherit" },
-  bg: "white",
+  _hover: { bg: "blackAlpha.200" },
 };
