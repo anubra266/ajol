@@ -1,6 +1,7 @@
 import { Box, Stack } from "@chakra-ui/layout";
 import { chakra } from "@chakra-ui/system";
 import React from "react";
+import { jobs } from "utils/jobs";
 import Job from "./job";
 
 const Results = () => {
@@ -11,8 +12,8 @@ const Results = () => {
       </Box>
 
       <Stack direction="column" spacing={4}>
-        {Array.from({ length: 6 }).map((_, jid) => (
-          <Job key={jid} id={jid} />
+        {jobs.map((job, jid) => (
+          <Job key={jid} id={jid} job={job} />
         ))}
       </Stack>
     </>

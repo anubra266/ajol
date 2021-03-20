@@ -1,14 +1,19 @@
 import { ButtonProps, IconButton } from "@chakra-ui/button";
 import Icon from "@chakra-ui/icon";
 import { Badge, Flex, Spacer, Stack, Text } from "@chakra-ui/layout";
-import React from "react";
 import { FaHeart, FaStar } from "react-icons/fa";
-import { SiMicrosoftedge } from "react-icons/si";
+import { useElementOnScreen } from "utils/Hooks/useElementOnScreen";
+import { parseSalary } from "utils/parse-cost";
+import { parseMatch } from "utils/parse-match";
 
 const Job = (props: any) => {
-  const { jid } = props;
+  const { job } = props;
+
+  const [ref, isPartiallyVisible, isFullyVisible] = useElementOnScreen();
+  const shouldBlur = isPartiallyVisible && !isFullyVisible;
   return (
     <Flex
+      ref={ref}
       w="full"
       shadow="sm"
       rounded="md"
@@ -16,57 +21,68 @@ const Job = (props: any) => {
       borderColor="blackAlpha.100"
       bg="white"
       minH="120"
+      opacity={shouldBlur ? 0.4 : 1}
       alignItems="center"
+      transition="all .4s ease-in-out"
+      _hover={{
+        shadow: "lg",
+      }}
     >
       <Stack spacing={4} direction="row" px={4} w="full" alignItems="center">
         <Stack>
           <IconButton
             aria-label="Job"
             {...logoStyles}
-            color="blue.400"
-            icon={<Icon boxSize="60%" as={SiMicrosoftedge} />}
+            color={job.icon.color}
+            icon={<Icon boxSize="60%" as={job.icon.name} />}
           />
-          <Badge
-            colorScheme="purple"
-            p={1}
-            variant="subtle"
-            layerStyle="job-badge"
-          >
-            100/85
-          </Badge>
+          {job.match && (
+            <Badge
+              colorScheme={parseMatch(job.match)}
+              p={1}
+              variant="subtle"
+              layerStyle="job-badge"
+            >
+              100/{job.match}
+            </Badge>
+          )}
         </Stack>
         <Stack spacing={2} w="full">
           <Stack direction="row">
             <Text fontSize="sm" fontWeight="semibold" color="gray.500">
-              Digital Ocean
+              {job.company}
             </Text>
-            <Badge
-              colorScheme="orange"
-              variant="subtle"
-              layerStyle="job-badge"
-              color="orange.400"
-              p={1}
-            >
-              <Icon as={FaStar} /> Perfect Job
-            </Badge>
-            <Badge
-              colorScheme="purple"
-              variant="subtle"
-              layerStyle="job-badge"
-              color="purple.500"
-              p={1}
-            >
-              <Icon as={FaHeart} /> New
-            </Badge>
+            {job.match >= 85 && (
+              <Badge
+                colorScheme="orange"
+                variant="subtle"
+                layerStyle="job-badge"
+                color="orange.400"
+                p={1}
+              >
+                <Icon as={FaStar} /> Perfect Job
+              </Badge>
+            )}
+            {job.new && (
+              <Badge
+                colorScheme="purple"
+                variant="subtle"
+                layerStyle="job-badge"
+                color="purple.500"
+                p={1}
+              >
+                <Icon as={FaHeart} /> New
+              </Badge>
+            )}
           </Stack>
           <Stack direction="row" fontSize="sm" fontWeight="semibold">
-            <Text color="gray.700">Sr. Back-End Developer</Text>
+            <Text color="gray.700">{job.position}</Text>
             <Spacer />
-            <Text color="brand.300">8.8 - 12.7k </Text>
+            <Text color="brand.300">{parseSalary(job.salary)}</Text>
             <Text color="gray.400">PLN</Text>
           </Stack>
           <Text fontSize="xs" fontWeight="semibold" color="gray.400">
-            Lagos, Ayobo
+            {job.location}
           </Text>
           <Stack
             direction="row"
@@ -74,39 +90,22 @@ const Job = (props: any) => {
             fontWeight="semibold"
             alignItems="baseline"
           >
-            <Badge
-              colorScheme="gray"
-              variant="subtle"
-              layerStyle="job-badge"
-              color="gray.500"
-              px={2}
-              py={1}
-            >
-              C++
-            </Badge>{" "}
-            <Badge
-              colorScheme="gray"
-              variant="subtle"
-              layerStyle="job-badge"
-              color="gray.500"
-              px={2}
-              py={1}
-            >
-              ASP.NET
-            </Badge>{" "}
-            <Badge
-              colorScheme="gray"
-              variant="subtle"
-              layerStyle="job-badge"
-              color="gray.500"
-              px={2}
-              py={1}
-            >
-              Razor
-            </Badge>
+            {job.tags.map((tag: string, tid: number) => (
+              <Badge
+                colorScheme="gray"
+                variant="subtle"
+                layerStyle="job-badge"
+                color="gray.500"
+                px={2}
+                py={1}
+                key={`tag-${tid}`}
+              >
+                {tag}
+              </Badge>
+            ))}
             <Spacer />
             <Text color="gray.400" fontSize="xx-small">
-              od. 29.12.2019
+              od. {job.post_date}
             </Text>
           </Stack>
         </Stack>
