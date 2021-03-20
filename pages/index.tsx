@@ -1,7 +1,6 @@
-import { Flex, GridItem, SimpleGrid } from "@chakra-ui/layout";
+import { GridItem, SimpleGrid } from "@chakra-ui/layout";
 import Listings from "components/listings";
 import Map from "components/map";
-import Head from "next/head";
 import { createContext, useMemo, useState } from "react";
 import { jobs } from "utils/jobs";
 
@@ -24,10 +23,6 @@ export default function Home() {
   );
   return (
     <>
-      <Head>
-        <title>Ajol</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <JobsContext.Provider value={contextProps}>
         <SimpleGrid columns={10} w="full">
           <GridItem colSpan={[10, , , 4]} zIndex={10}>
