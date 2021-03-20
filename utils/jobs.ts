@@ -2,11 +2,28 @@ import {
   FaDigitalOcean,
   FaFacebookF,
   FaMicrosoft,
+  FaSchool,
   FaUber,
 } from "react-icons/fa";
 import { SiAndela } from "react-icons/si";
 
 export const jobs = [
+  {
+    id: "4ffgth5j4H4",
+    icon: { name: FaSchool, color: "purple.400" },
+    match: 90,
+    company: "Anchor University",
+    position: "Jr. Back-End Developer",
+    salary: {
+      start: 500,
+      end: 1200,
+    },
+    location: "Lagos, Ayobo",
+    tags: ["Laravel"],
+    post_date: "31.02.2021",
+    new: true,
+    coords: [6.603963039267388, 3.241952193336505],
+  },
   {
     id: "434n4j4SSjf",
     icon: { name: FaDigitalOcean, color: "blue.400" },
@@ -19,7 +36,7 @@ export const jobs = [
     },
     location: "Lagos, Ayobo",
     tags: ["C++", "Open SG", "GPSS"],
-    post_date: "29.03.2021",
+    post_date: "29.02.2021",
     new: true,
     coords: [6.6054, 3.2438],
   },
@@ -35,7 +52,7 @@ export const jobs = [
     },
     location: "Parkview Estate, Ikoyi",
     tags: ["C++", "Vue JS", "ELAN"],
-    post_date: "24.03.2021",
+    post_date: "24.02.2021",
     new: true,
     coords: [6.4588, 3.441],
   },
@@ -51,7 +68,7 @@ export const jobs = [
     },
     location: "Lekki, Abijo",
     tags: ["mSQL", "YafaRay", "CSS3"],
-    post_date: "22.03.2021",
+    post_date: "22.02.2021",
     coords: [6.4531, 3.6775],
   },
   {
@@ -66,7 +83,7 @@ export const jobs = [
     },
     location: "Lekki, Chevyview Estate",
     tags: ["mSQL", "YafaRay", "CSS3"],
-    post_date: "20.03.2021",
+    post_date: "20.02.2021",
     coords: [6.4429, 3.5301],
   },
   {
@@ -81,7 +98,7 @@ export const jobs = [
     },
     location: "Lagos Island, Onikan",
     tags: ["Figma", "Dribble"],
-    post_date: "19.03.2021",
+    post_date: "19.02.2021",
     coords: [6.4417, 3.4019],
   },
 ];

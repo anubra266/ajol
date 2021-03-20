@@ -16,5 +16,6 @@ export const layerStyles: layerStyles = {
     fontWeight: "semibold",
     fontSize: "xx-small",
     textAlign: "center",
+    h: 5,
   },
 };

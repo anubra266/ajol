@@ -5,12 +5,12 @@ import React, { useContext } from "react";
 import Job from "./job";
 
 const Results = () => {
-  const { jobs, setJob } = useContext(JobsContext);
+  const { jobs, job, setJob } = useContext(JobsContext);
 
   const { getRootProps, getRadioProps } = useRadioGroup({
     name: "job",
-    defaultValue: "",
     onChange: setJob,
+    value: job,
   });
   const group = getRootProps();
 
