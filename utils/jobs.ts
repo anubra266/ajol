@@ -1,8 +1,14 @@
-import { FaDigitalOcean, FaMicrosoft, FaUber } from "react-icons/fa";
-import { SiAndela, SiMicrosoftedge } from "react-icons/si";
+import {
+  FaDigitalOcean,
+  FaFacebookF,
+  FaMicrosoft,
+  FaUber,
+} from "react-icons/fa";
+import { SiAndela } from "react-icons/si";
 
 export const jobs = [
   {
+    id: "434n4j4SSjf",
     icon: { name: FaDigitalOcean, color: "blue.400" },
     match: 85,
     company: "Digital Ocean",
@@ -13,10 +19,12 @@ export const jobs = [
     },
     location: "Lagos, Ayobo",
     tags: ["C++", "Open SG", "GPSS"],
-    post_date: "29.12.2019",
+    post_date: "29.03.2021",
     new: true,
+    coords: [6.6054, 3.2438],
   },
   {
+    id: "ffmwf9JJF89s",
     icon: { name: FaMicrosoft, color: "orange.400" },
     match: 54,
     company: "Microsoft",
@@ -27,10 +35,12 @@ export const jobs = [
     },
     location: "Parkview Estate, Ikoyi",
     tags: ["C++", "Vue JS", "ELAN"],
-    post_date: "24.12.2019",
+    post_date: "24.03.2021",
     new: true,
+    coords: [6.4588, 3.441],
   },
   {
+    id: "fwf8Heg89ej",
     icon: { name: FaUber, color: "gray.900" },
     match: 23,
     company: "UBER",
@@ -41,19 +51,37 @@ export const jobs = [
     },
     location: "Lekki, Abijo",
     tags: ["mSQL", "YafaRay", "CSS3"],
-    post_date: "22.12.2019",
+    post_date: "22.03.2021",
+    coords: [6.4531, 3.6775],
   },
   {
+    id: "fwfjmi8Hf8sd",
     icon: { name: SiAndela, color: "orange.400" },
     match: null,
     company: "Andela",
-    position: "Sr. Front End Dev & Sr. Full Stack Dev.",
+    position: "Product Manager",
     salary: {
       start: 21000,
       end: 24300,
     },
-    location: "Lekki, Abijo",
+    location: "Lekki, Chevyview Estate",
     tags: ["mSQL", "YafaRay", "CSS3"],
-    post_date: "22.12.2019",
+    post_date: "20.03.2021",
+    coords: [6.4429, 3.5301],
+  },
+  {
+    id: "fe8Hf7wfjkw99",
+    icon: { name: FaFacebookF, color: "blue.700" },
+    match: null,
+    company: "Facebook",
+    position: "Designer.",
+    salary: {
+      start: 21000,
+      end: 24300,
+    },
+    location: "Lagos Island, Onikan",
+    tags: ["Figma", "Dribble"],
+    post_date: "19.03.2021",
+    coords: [6.4417, 3.4019],
   },
 ];

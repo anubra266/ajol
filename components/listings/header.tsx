@@ -34,7 +34,7 @@ const SocialIcon = (props: IconButtonProps) => (
     bg="brand.300"
     color="white"
     _hover={{
-      bg: "brand.400",
+      bg: "brand.200",
     }}
   />
 );

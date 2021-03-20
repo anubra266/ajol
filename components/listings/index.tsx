@@ -6,14 +6,7 @@ import Search from "./search";
 
 const Listings = () => {
   return (
-    <Flex
-      w={["40%"]}
-      p={5}
-      direction="column"
-      shadow="md"
-      bg="white"
-      h="full"
-    >
+    <Flex p={5} direction="column" shadow="md" bg="white" h="full">
       <Header />
       <Search />
       <Results />
