@@ -6,8 +6,8 @@ const siteConfig = {
     description: "Simple Job Listings Site",
     siteUrl,
     twitter: {
-      handle: "@chakra-ui",
-      site: "@chakra-ui",
+      handle: "@anubra266",
+      site: "@anubra266",
       cardType: "summary_large_image",
     },
     openGraph: {
