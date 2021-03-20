@@ -12,4 +12,9 @@ export const layerStyles: layerStyles = {
     backgroundRepeat: "repeat",
     bgColor: "brand.900",
   },
+  "job-badge": {
+    fontWeight: "semibold",
+    fontSize: "xx-small",
+    textAlign: "center",
+  },
 };
